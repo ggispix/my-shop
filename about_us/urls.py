@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import index
-name = 'about-us'
+from .views import aboutUs
+name = 'about_us'
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', aboutUs, name='index'),
 ]

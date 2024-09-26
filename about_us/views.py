@@ -1,4 +1,4 @@
 from django.shortcuts import render
-def index(request):
-    return None
-# Create your views here.
+from django.http import HttpResponse
+def aboutUs(request):
+    return render(request, 'about_us/aboutus.html')

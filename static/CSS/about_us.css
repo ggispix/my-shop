@@ -1,0 +1,55 @@
+.ezy__about12 {
+  /* Bootstrap variables */
+  --bs-body-color: #eae7e4;
+  --bs-body-bg: rgb(255, 102, 0);
+
+  /* Easy Frontend variables */
+  --ezy-theme-color: rgb(52, 35, 122);
+  --ezy-theme-color-rgb: 13, 110, 253;
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  overflow: hidden;
+  padding: 60px 0 0;
+}
+
+/* Gray Block Style */
+.gray .ezy__about12,
+.ezy__about12.gray {
+  /* Bootstrap variables */
+  --bs-body-bg: rgb(28, 17, 57);
+}
+
+
+
+.ezy__about12-heading {
+  font-size: 35px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .ezy__about12-heading {
+    font-size: 55px;
+  }
+}
+
+.ezy__about12-sub-heading {
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+.ezy__about12-btn {
+  background-color: var(--bs-body-color);
+  color: var(--bs-body-bg);
+  padding: 8px 25px;
+  transition: 0.5s;
+}
+.ezy__about12-btn:hover {
+  color: var(--bs-body-bg);
+  opacity: 0.9;
+}
+
+
+/* about us products */
+

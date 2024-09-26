@@ -1,0 +1,284 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <link rel="stylesheet" href="{% static 'CSS/product_detail.css' %}">
+    <section class="ezy__epoverview4_0ti4wMLR" id="ezy__epoverview4_0ti4wMLR">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="ezy__epoverview4_0ti4wMLR-card p-3 p-sm-4 p-lg-5 me-lg-4">
+          <div class="text-center mb-3 p-md-4">
+            <img
+              src="{{ product.photo.url}}"
+              alt="{{ product.name }}"
+              class="img-fluid w-100"
+            />
+          </div>
+
+          <ul class="nav ezy__epoverview4_0ti4wMLR-gallery">
+            {% for gallery_image in product.photo.all %}
+            <a href="#!">
+              <li>
+                <img
+                  src="{{ gallery_image.url }}"  <!-- Галерея изображений -->
+                  alt="{{ product.name }}"
+                  class="img-fluid"
+                />
+              </li>
+            </a>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <div class="mb-4 pb-lg-2">
+          <h1 class="ezy__epoverview4_0ti4wMLR-heading mb-3">Beats Headphone 2019</h1>
+          <p class="ezy__epoverview4_0ti4wMLR-content mb-4">
+            <span>4.7</span> <i class="fas fa-star mx-2"></i>
+            <a href="#!" class="ezy__epoverview4_0ti4wMLR-review ms-1">3 Reviews</a> <span class="ms-2">87 Order</span>
+          </p>
+          <div class="row my-4">
+            <div class="col-12 col-lg-10 col-xl-8">
+              <p class="ezy__epoverview4_0ti4wMLR-content mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas
+                elementum at diam consequat bibendum.
+              </p>
+            </div>
+          </div>
+          <h3 class="ezy__epoverview4_0ti4wMLR-price fw-bold mb-0">Rs. 354</h3>
+        </div>
+
+        <form action="#!">
+          <div class="mb-4">
+            <h5 class="ezy__epoverview4_0ti4wMLR-title mb-2">Color</h5>
+            <div
+              class="btn-group ezy__epoverview4_0ti4wMLR-radios d-block mb-2"
+              role="group"
+              aria-label="Basic radio toggle button group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-color"
+                id="ezy__epoverview4_0ti4wMLR-color1"
+                autocomplete="off"
+                checked
+              />
+              <label
+                class="btn me-1 mt-1"
+                style="--ezy-product-color: #ffc107"
+                for="ezy__epoverview4_0ti4wMLR-color1"
+              ></label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-color"
+                id="ezy__epoverview4_0ti4wMLR-color2"
+                autocomplete="off"
+              />
+              <label
+                class="btn me-1 mt-1"
+                style="--ezy-product-color: #3aa9f3"
+                for="ezy__epoverview4_0ti4wMLR-color2"
+              ></label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-color"
+                id="ezy__epoverview4_0ti4wMLR-color3"
+                autocomplete="off"
+              />
+              <label
+                class="btn me-1 mt-1"
+                style="--ezy-product-color: #ff7171"
+                for="ezy__epoverview4_0ti4wMLR-color3"
+              ></label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-color"
+                id="ezy__epoverview4_0ti4wMLR-color4"
+                autocomplete="off"
+              />
+              <label
+                class="btn me-1 mt-1"
+                style="--ezy-product-color: #161d25"
+                for="ezy__epoverview4_0ti4wMLR-color4"
+              ></label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-color"
+                id="ezy__epoverview4_0ti4wMLR-color5"
+                autocomplete="off"
+              />
+              <label
+                class="btn me-1 mt-1"
+                style="--ezy-product-color: #ff0000"
+                for="ezy__epoverview4_0ti4wMLR-color5"
+              ></label>
+            </div>
+          </div>
+          <div class="mb-4">
+            <h5 class="ezy__epoverview4_0ti4wMLR-title mb-0">Size: <span class="opacity-50">Extra Extra Small</span></h5>
+            <div
+              class="btn-group ezy__epoverview4_0ti4wMLR-radios d-block mb-2"
+              role="group"
+              aria-label="Basic radio toggle button group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size1"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size1">
+                XXS
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size2"
+                autocomplete="off"
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size2">
+                XS
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size3"
+                autocomplete="off"
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size3">
+                S
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size4"
+                autocomplete="off"
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size4">
+                M
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size5"
+                autocomplete="off"
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size5">
+                L
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size6"
+                autocomplete="off"
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size6">
+                XL
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size7"
+                autocomplete="off"
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size7">
+                XXL
+              </label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="ezy__epoverview4_0ti4wMLR-size"
+                id="ezy__epoverview4_0ti4wMLR-size8"
+                autocomplete="off"
+                disabled
+              />
+              <label class="btn me-2 mt-2 rounded-pill overflow-hidden px-3 py-1" for="ezy__epoverview4_0ti4wMLR-size8">
+                XXXL
+              </label>
+            </div>
+          </div>
+          <div class="mb-4">
+            <h5 class="ezy__epoverview4_0ti4wMLR-title mb-2">QTY</h5>
+            <div class="input-group ezy__epoverview4_0ti4wMLR-qty d-inline-flex mb-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                value="1"
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+              <div class="input-group-text d-flex flex-column bg-transparent p-0">
+                <button class="btn" type="button">-</button>
+                <button class="btn" type="button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-center">
+            <div class="col-md-10 d-flex">
+              <button
+                class="btn ezy__epoverview4_0ti4wMLR-btn text-uppercase d-inline-flex justify-content-center align-items-center px-3 px-sm-5 me-2 me-lg-3 w-100"
+              >
+                Buy Now
+              </button>
+              <button
+                class="btn ezy__epoverview4_0ti4wMLR-btn-outline text-uppercase bg-transparent d-inline-flex justify-content-center align-items-center px-3 px-sm-4 w-100"
+              >
+                Add To Cart
+              </button>
+            </div>
+            <div class="col-12 mt-3">
+              <button
+                class="btn btn-link ezy__epoverview4_0ti4wMLR-fav d-inline-flex align-items-center text-decoration-none"
+              >
+                <i class="far fa-heart fs-5 me-1"></i> Add to wishlist
+              </button>
+              <button
+                class="btn btn-link ezy__epoverview4_0ti4wMLR-share d-inline-flex align-items-center text-decoration-none"
+              >
+                <i class="fas fa-share-alt fs-5 me-1"></i> Share
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

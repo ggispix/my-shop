@@ -1,13 +1,20 @@
 from django.db import models
 from django.utils import timezone
 
+
 class Category(models.Model):
+    photo =models.ImageField(upload_to="category")
     name = models.CharField(max_length=50)
     sort = models.PositiveSmallIntegerField()
     is_visible = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+        verbose_name = 'Category'
+        ordering = ['sort']
 
 class Sale(models.Model):
     name = models.CharField(max_length=50)  # the name of sale
@@ -34,6 +41,11 @@ class Product(models.Model):
             final_price = self.price * (1 - max_discount / 100)
             return final_price
         return self.price
+
+    class Meta:
+        verbose_name_plural = 'Products'
+        verbose_name = 'Product'
+
 
     def __str__(self):
         return self.name
