@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'CSS/register.css' %}">
+<section class="ezy__signup5 d-flex">
+    <div class="container">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-lg-10 py-5">
+                <div class="card ezy__signup5-form-card">
+                    <div class="card-body p-md-5">
+                        <div class="row mb-4 mb-md-5">
+                            <div class="col-md-6">
+                                <h2 class="ezy__signup5-heading mb-3">Welcome to Easy Frontend!</h2>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="mb-0 text-md-end">
+                                    <span class="opacity-50 me-2">Already have an account?</span>
+                                    <a href="{% url 'login' %}" class="btn btn-link p-0 text-dark text-decoration-none">Sign In</a>
+                                </p>
+                            </div>
+                        </div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="col-md-6 col-lg-5">
+                                <button type="submit" class="btn ezy__signup5-btn-submit w-100">
+                                    Sign Up
+                                    <span class="fas fa-arrow-right ms-2 text-white"></span>
+                                </button>
+                                <div class="position-relative ezy__signup5-or-separator">
+                                    <hr class="my-4 my-md-5" />
+                                    <span class="px-2">Or</span>
+                                </div>
+                                <button class="btn btn-primary ezy__signup5-btn w-100 d-flex align-items-center mb-3">
+                                    <span class="fab fa-facebook text-white fs-4"></span>
+                                    <span class="w-100 text-center text-white">Continue with Facebook</span>
+                                </button>
+                                <button class="btn btn-danger ezy__signup5-btn w-100 d-flex align-items-center">
+                                    <span class="fab fa-google text-white fs-4"></span>
+                                    <span class="w-100 text-center text-white">Continue with Google</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

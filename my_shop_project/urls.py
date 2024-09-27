@@ -19,11 +19,16 @@ from django.urls import path, include
 
 import about_us,orders,cart,products,contacts
 from django.urls import path
+
+import register.views
+import subscription.views
 from about_us.views import aboutUs
 from cart.views import cart_view
 from orders.views import checkout
 from products.views import product_detail, products_by_category, category_list
 from contacts.views import index
+from subscription import views
+from register import views
 
 
 urlpatterns = [
@@ -34,11 +39,24 @@ urlpatterns = [
 
     path('cart/', include(('cart.urls', 'cart_app'), namespace='cart')),# Cart page
 
-    path('orders/', include(('orders.urls', 'orders_app'), namespace='orders')),# Orders page
+    path('order/', include(('orders.urls', 'orders_app'), namespace='orders')),# Orders page
 
     path('categories/', include(('products.urls', 'products_app'), namespace='products')),
+
+    path('subscription/', include(('subscription.urls', 'subscription_app'), namespace='subscription')),
+
     path('category/<int:category_id>/', products_by_category, name='products_by_category'),
+
     path('product/<int:product_id>/', product_detail, name='product_detail'),
 
+    path('subscription/', subscription.views.subscribe, name='subscription'),
+
+    path('register/', register.views.register, name='register'),
+
+    path('checkout/', include(('orders.urls', 'order_app'), namespace='checkout')),
+
+    path('login/', views.user_login, name='login'),
+
+    path('logout/', views.user_logout, name='logout'),
 ]
 

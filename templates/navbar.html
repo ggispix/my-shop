@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
+<!-- Nav Bar -->
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <div class="ezy__nav2">
+        <nav class="navbar navbar-expand-lg  py-3">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'about_us:index' %}">
+                    My Shop Project
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span>
+                        <span></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-4 mt-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="{% url 'about_us:index' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'products:category_list' %}">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'cart:index' %}">Cart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'orders:checkout' %}">Orders</a></li>
+                    </ul>
+                    <ul class="navbar-nav flex-row mb-2 mb-lg-0 ms-lg-3">
+                        <li class="nav-item me-2">
+                            <!-- Кнопка Sign Up, ведущая на страницу регистрации -->
+                            <a href="{% url 'register' %}" class="btn btn-outline-primary px-3">Sign Up</a>
+                        </li>
+                        
+                        <li class="nav-item me-2">
+                            <!-- Кнопка Log Out, ведущая на URL выхода из системы -->
+                            <a href="{% url 'logout' %}" class="btn btn-outline-primary px-3">Log Out</a>
+                        </li>
+                    </ul>
 
-</body>
-</html>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Nav Bar -->

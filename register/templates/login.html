@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+<section class="ezy__signin15_0VubPPld d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 col-md-6 col-lg-5">
+        <div>
+          <h2 class="ezy__signin15_0VubPPld-heading mb-5">ACCOUNT LOGIN</h2>
+          <form method="post" action="{% url 'login' %}">
+
+
+            <div class="ezy__signin15_0VubPPld-form-card">
+                <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="hidden" name="next" value="{{ request.GET.next}}">
+                <button type="submit" class="btn ezy__signin15_0VubPPld-btn w-100" >SIGN IN</button>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="">Forget Password ?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

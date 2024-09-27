@@ -1,10 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'index.html' %}
 
-</body>
-</html>
+{% load static %}
+{% block content %}
+<section class="ezy__eporder2_4YbMG17i">
+  <div class="container py-5">
+    <div class="row justify-content-between">
+      <!-- progress bar -->
+      <div class="col-12">
+        <div class="ezy__eporder2_4YbMG17i-progress d-flex justify-content-between position-relative mb-5">
+          <span class="ezy__eporder2_4YbMG17i-cart active">1</span>
+          <span class="ezy__eporder2_4YbMG17i-bill">2</span>
+          <span class="ezy__eporder2_4YbMG17i-completed">3</span>
+        </div>
+      </div>
+
+      <!-- courses -->
+      <div class="col-12 col-md-6">
+        <div class="card mt-4">
+          <div class="card-body row">
+            <!-- image -->
+            <div class="col-12 col-md-5">
+              <a href="#">
+                <img src="https://cdn.easyfrontend.com/pictures/ecommerce/mac.jpg" alt="..."
+                  class="rounded img-fluid" />
+              </a>
+            </div>
+            <!-- details -->
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+              <!-- title -->
+              <a href="#">
+                <h5 class="ezy__eporder2_4YbMG17i-title">Certificate in British Sign Language (BSL) Level 1 & 2</h5>
+              </a>
+              <p class="ezy__eporder2_4YbMG17i-price mb-0">$ 15.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-4">
+          <div class="card-body row">
+            <!-- image -->
+            <div class="col-12 col-md-5">
+              <a href="#">
+                <img src="https://cdn.easyfrontend.com/pictures/ecommerce/tab.jpg" alt="..."
+                  class="rounded img-fluid" />
+              </a>
+            </div>
+            <!-- details -->
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+              <!-- title -->
+              <a href="#">
+                <h5 class="ezy__eporder2_4YbMG17i-title">How to Improve Your Personal Skills (PDF)</h5>
+              </a>
+              <p class="ezy__eporder2_4YbMG17i-price mb-0">$ 15.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- details -->
+      <div class="col-12 col-md-5">
+        <div class="ezy__eporder2_4YbMG17i-details p-4 p-lg-5 mt-4 rounded">
+          <h4 class="mb-5">Your Order</h4>
+          <div class="row">
+            <div class="col-8">
+              <h6 class="mb-0">Product</h6>
+            </div>
+            <div class="col-4">
+              <p class="mb-0">Price</p>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="col-8">
+              <h6 class="mb-0">Certificate in British Sign Language (BSL) Level 1 & 2</h6>
+            </div>
+            <div class="col-4">
+              <p class="mb-0">£15.00</p>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="col-8">
+              <h6 class="mb-0">How to Improve Your Personal Skills (PDF)</h6>
+            </div>
+            <div class="col-4">
+              <p class="mb-0">£20.00</p>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="col-8">
+              <h6 class="mb-0">Subtotal</h6>
+            </div>
+            <div class="col-4">
+              <p class="mb-0">£35.00</p>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="col-8">
+              <h6>Total</h6>
+            </div>
+            <div class="col-4">
+              <p>£35.00</p>
+            </div>
+
+            <form action="" class="mt-5">
+              <div class="input-group">
+                <input class="form-control" type="search" placeholder="Enter coupon" aria-label="Search" />
+                <button class="btn ezy__eporder2_4YbMG17i-btn" type="submit">Apply</button>
+              </div>
+            </form>
+            <div class="mt-4">
+              <button type="submit" class="btn ezy__eporder2_4YbMG17i-btn w-100">Proceed To Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -27,7 +27,7 @@ class Sale(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     price = models.PositiveIntegerField()
     photo = models.ImageField(upload_to='product_photos')
     description = models.TextField()
@@ -49,3 +49,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+

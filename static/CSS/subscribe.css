@@ -1,0 +1,129 @@
+.ezy__comingsoon12_oAIAUaNs {
+  /* Bootstrap variables */
+  --bs-body-color: #262830;
+  --bs-body-bg: #fff;
+
+  /* Easy Frontend variables */
+  --ezy-theme-color: rgb(13, 110, 253);
+  --ezy-theme-color-rgb: 13, 110, 253;
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  padding: 100px 0;
+}
+
+@media (min-width: 768px) {
+  .ezy__comingsoon12_oAIAUaNs {
+    padding: 250px 0;
+  }
+}
+
+/* Gray Block Style */
+.gray .ezy__comingsoon12_oAIAUaNs,
+.ezy__comingsoon12_oAIAUaNs.gray {
+  /* Bootstrap variables */
+  --bs-body-bg: rgb(246, 246, 246);
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__comingsoon12_oAIAUaNs,
+.ezy__comingsoon12_oAIAUaNs.dark-gray {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(30, 39, 53);
+}
+
+/* Dark Block Style */
+.dark .ezy__comingsoon12_oAIAUaNs,
+.ezy__comingsoon12_oAIAUaNs.dark {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(11, 23, 39);
+
+  /* Easy Frontend variables */
+  --ezy-countdown-bg: rgb(11, 23, 39);
+  --ezy-countdown-color: #fff;
+  --ezy-countdown-shadow: 0px 4px 32px rgba(0, 0, 0, 0.22);
+  --ezy-countdown-number-bg: rgb(30, 39, 53);
+}
+
+/* heading and sub-heading */
+.ezy__comingsoon12_oAIAUaNs-heading {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .ezy__comingsoon12_oAIAUaNs-heading {
+    font-size: 50px;
+  }
+}
+
+.ezy__comingsoon12_oAIAUaNs-sub-heading {
+  font-size: 18px;
+  line-height: 26px;
+  opacity: 0.8;
+}
+
+.ezy__comingsoon12_oAIAUaNs .form-control:focus {
+  border-color: var(--ezy-theme-color);
+  box-shadow: none;
+}
+
+.ezy__comingsoon12_oAIAUaNs-input-group {
+  box-shadow: var(--ezy-form-shadow);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.ezy__comingsoon12_oAIAUaNs-subscription-form .form-control {
+  padding: 15px 20px;
+}
+
+.ezy__comingsoon12_oAIAUaNs .form-control::-webkit-input-placeholder {
+  font-size: 18px;
+}
+
+.ezy__comingsoon12_oAIAUaNs-btn {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--ezy-theme-color);
+  border-color: var(--ezy-theme-color);
+}
+
+.ezy__comingsoon12_oAIAUaNs-btn:hover {
+  background-color: rgba(var(--ezy-theme-color-rgb), 0.9);
+  border-color: rgba(var(--ezy-theme-color-rgb), 0.9);
+}
+
+.ezy__comingsoon12_oAIAUaNs-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://cdn.easyfrontend.com/pictures/comingsoon/coming12.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50vw;
+  display: none;
+}
+@media (min-width: 768px) {
+  .ezy__comingsoon12_oAIAUaNs-banner {
+    display: block;
+  }
+}
+.ezy__comingsoon12_oAIAUaNs-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
