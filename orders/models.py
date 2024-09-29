@@ -32,7 +32,7 @@ class OrderInfo(models.Model):
     city = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    ordered_date = models.DateTimeField(default= timezone.now())
+    ordered_date = models.DateTimeField(default=timezone.now)
     final_price = models.DecimalField(max_digits=10, decimal_places=2)
 
 # Create your models here.
