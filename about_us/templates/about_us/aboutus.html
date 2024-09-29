@@ -9,8 +9,8 @@
         <header class="masthead text-center text-white">
                     <div class="masthead-content">
                         <div class="container px-5">
-                            <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-                            <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
+                            <h1 class="masthead-heading mb-0">Shopping As Lifestyle</h1>
+                            <h2 class="masthead-subheading mb-0">Look Like You Feel</h2>
                             <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'products:category_list' %}">Start Shop</a>
                         </div>
                     </div>
@@ -21,47 +21,6 @@
         </header>
         <!-- Header -->
 
-
-        <!-- Category-->
-        <link rel="stylesheet" href="{% static 'CSS/category.css' %}">
-        <section class="ezy__epcategory5_ayqDrKgT">
-            <div class="container">
-        <div class="row">
-          <div class="col">
-            <h2 class="ezy__epcategory5_ayqDrKgT-heading">Product Category</h2>
-          </div>
-          <!-- button start -->
-          <div class="col-auto">
-            <a class="btn ezy__epcategory5_ayqDrKgT-btn px-0" href="{% url 'products_by_category' category_id=0 %}" role="button">See All</a>
-          </div>
-          <!-- button end -->
-        </div>
-        <div class="row mt-4 mt-sm-5 ezy__epcategory5_ayqDrKgT-row">
-
-            <!-- card start -->
-          {% for item in categories_with_count %}
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 p-2">
-                <a href="{% url 'products_by_category' category_id=item.category.id %}">
-                  <div class="card ezy__epcategory5_ayqDrKgT-card">
-                    <img
-                      src="{{ category.photo.url }}"
-                      class="card-img-top"
-                      alt='{{ category.name }}'
-                    />
-                    <div class="card-body text-start pb-0">
-                      <h5 class="ezy__epcategory5_ayqDrKgT-card-title m-0">{{ category.name}}</h5>
-                      <p class="ezy__epcategory5_ayqDrKgT-card-text">{{ item.product_count}}</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-          {% endfor %}
-            <!-- card end -->
-
-        </div>
-      </div>
-        </section>
-        <!-- Category-->
 
 
         <!-- About Us -->
@@ -80,6 +39,7 @@
                   </p>
                   <div class="mt-5">
                     <a class="btn ezy__about12-btn" href="{% url 'subscription:subscribe' %}">Subscribe</a>
+                      {% csrf_token %}
                   </div>
                 </div>
               </div>

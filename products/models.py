@@ -32,7 +32,8 @@ class Product(models.Model):
     photo = models.ImageField(upload_to='product_photos')
     description = models.TextField()
     is_visible = models.BooleanField(default=True)
-    sales = models.ManyToManyField(Sale, blank=True)  # list of discounts for product
+    sales = models.ManyToManyField(Sale, blank=True)
+    stock = models.IntegerField(default=0)# list of discounts for product
 
     def final_price(self):
         active_sales = self.sales.filter(start_date__lte=timezone.now(), end_date__gte=timezone.now())

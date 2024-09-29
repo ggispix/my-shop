@@ -2,21 +2,10 @@
 <!-- Footer -->
     <link rel="stylesheet" href="{% static 'CSS/footer.css' %}">
     <footer class="ezy__footer18_j6U7vf7S">
-      <div class="ezy__footer18_j6U7vf7S-newsletter p-4 p-md-5">
-        <h2>Newsletter</h2>
-        <form>
-          <div class="form-group mt-5 mb-0">
-            <div class="input-group d-flex justify-content-center">
-              <input type="email" class="form-control" placeholder="Enter Email" />
-              <button class="btn btn-danger ezy__footer18_j6U7vf7S-newsletter-btn">Subscribe</button>
-            </div>
-          </div>
-        </form>
-      </div>
       <div class="container">
         <div class="row text-center text-sm-start mb-md-5">
           <div class="col-lg-3">
-            <h2 class="fw-bold">Easy Frontend</h2>
+            <h2 class="fw-bold">MyShopStyle</h2>
             <p class="ezy__footer18_j6U7vf7S-text opacity-75 mt-4 pe-lg-4">
               Be the first to find out about exclusive deals, the latest Lookbooks trends. We're on a mission to build a
               better future where technology.
@@ -26,10 +15,10 @@
             <h5>Quick Links</h5>
             <ul class="nav flex-column ezy__footer18_j6U7vf7S-quick-links">
               <li>
-                <a href="#!"> Home</a>
+                <a href="{% url 'about_us' %}"> Home</a>
               </li>
               <li>
-                <a href="#!"> About Us</a>
+                <a href="{% url  'products:category_list' %}"> Products</a>
               </li>
               <li>
                 <a href="#!"> Services</a>
@@ -72,7 +61,7 @@
             <ul class="nav flex-column ezy__footer18_j6U7vf7S-quick-links">
               <li>Sylhet, Bangladesh</li>
               <li>
-                <a href="#!"><span class="fas fa-envelope me-2 small opacity-50"></span> contact@easyfrontend.com</a>
+                <a href="#!"><span class="fas fa-envelope me-2 small opacity-50"></span> contact@myshopstyle.com</a>
               </li>
               <li>
                 <a href="#!"><span class="fas fa-phone me-2 small opacity-50"></span> +880 1633-154215</a>

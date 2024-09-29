@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'CSS/order_1.css' %}">
     <section class="ezy__eporder4_w7xGih1W">
   <div class="container py-5">
     <div class="row justify-content-center">
@@ -23,7 +23,7 @@
           <p class="ezy__eporder4_w7xGih1W-sub-heading">
             In purus donec ac in nulla lobortis. Lectus massa erat odio turpis nulla sed.
           </p>
-          <button class="btn ezy__eporder4_w7xGih1W-btn mt-4">Back To Courses</button>
+          <a class="btn ezy__eporder4_w7xGih1W-btn mt-4" href="{% url 'about_us' %}">Back To Courses</a>
         </div>
       </div>
     </div>

@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<section class="payment-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Payment</h2>
+        
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="card p-4">
+                    <!-- Order Summary -->
+                    <h4 class="mb-4">Your Order Summary</h4>
+                    <div class="row mb-2">
+                        <div class="col-8"><strong>Product</strong></div>
+                        <div class="col-4"><strong>Price</strong></div>
+                    </div>
+                    {% for item in cart.items %}
+                    <div class="row mb-2">
+                        <div class="col-8">{{ item.product.name }} (x{{ item.quantity }})</div>
+                        <div class="col-4">£{{ item.price }}</div>
+                    </div>
+                    {% endfor %}
+                    <hr>
+                    <div class="row mb-4">
+                        <div class="col-8"><strong>Total</strong></div>
+                        <div class="col-4"><strong>£{{ cart.total_price }}</strong></div>
+                    </div>
+
+                    <!-- Payment Form -->
+                    <form action="{% url 'orders:payment' %}" method="POST">
+                        {% csrf_token %}
+                        
+                        <h4 class="mb-4">Select Payment Method</h4>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="payment_method" id="paypal" value="paypal">
+                            <label class="form-check-label" for="paypal">
+                                PayPal
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="payment_method" id="credit_card" value="credit_card" checked>
+                            <label class="form-check-label" for="credit_card">
+                                Credit or Debit Card
+                            </label>
+                        </div>
+
+                        <!-- Credit Card Fields (conditionally displayed based on selection) -->
+                        <div id="card-fields" class="mt-4">
+                            <div class="mb-3">
+                                <label for="card_number" class="form-label">Card Number</label>
+                                <input type="text" class="form-control" id="card_number" name="card_number" placeholder="1234 5678 9123 4567" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="expiry_date" class="form-label">Expiry Date</label>
+                                <input type="text" class="form-control" id="expiry_date" name="expiry_date" placeholder="MM/YY" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="cvc" class="form-label">CVC</label>
+                                <input type="text" class="form-control" id="cvc" name="cvc" placeholder="123" required>
+                            </div>
+                        </div>
+
+                        <div class="form-check mt-4 mb-4">
+                            <input class="form-check-input" type="checkbox" id="agree" name="terms" required>
+                            <label class="form-check-label" for="agree">
+                                I agree to the <a href="#">terms and conditions</a>
+                            </label>
+                        </div>
+
+                        <a type="submit" class="btn btn-primary w-100" href="{% url 'orders:payment-succeed' %}">Submit Payment</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django import forms
-from .models import Order
+from .models import OrderInfo
 
-class OrderForm(forms.ModelForm):
+class OrderInfoForm(forms.ModelForm):
     class Meta:
-        model = Order
+        model = OrderInfo
         fields = ['address','city','email','full_name',]

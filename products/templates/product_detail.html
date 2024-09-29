@@ -263,14 +263,12 @@
 
               <!-- Кнопка для добавления в корзину -->
               {% if user.is_authenticated %}
-                <form method="POST" href="{% url 'cart:add_to_cart' product.id %}">
+                <form method="POST" href="{% url 'product:add_to_cart' product.id %}">
                     {% csrf_token %}
-                    <button
-                        class="btn ezy__epoverview4_0ti4wMLR-btn-outline text-uppercase bg-transparent d-inline-flex justify-content-center align-items-center px-3 px-sm-4 w-100"
-                        type="submit"
-                    >
-                        Add To Cart
-                    </button>
+
+                    <a href="{% url 'product:add_to_cart' product.id %}"
+                      <h5 class="ezy__epoverview4_0ti4wMLR-btn-outline text-uppercase bg-transparent d-inline-flex justify-content-center align-items-center px-3 px-sm-4 w-100">Add to Cart</h5>
+                    </a>
                 </form>
             {% else %}
                 <a href="{% url 'register:login' %}" class="btn ezy__epoverview4_0ti4wMLR-btn-outline text-uppercase bg-transparent d-inline-flex justify-content-center align-items-center px-3 px-sm-4 w-100">

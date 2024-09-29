@@ -9,34 +9,33 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="card ezy__epcart2_7rEL0J2C-card mb-3">
+          {% for item in cart_items %}
           <div class="card-body d-flex align-items-start p-md-4">
             <div class="ezy__epcart2_7rEL0J2C-image me-3 me-md-4">
-              <a href="#!">
+              <a href="{{ item.url }}">
                 <img
-                  src="https://cdn.easyfrontend.com/pictures/portfolio/portfolio14.jpg"
-                  alt=""
+                  src="{{ item.image_url }}"
+                  alt="{{ item.name }}"
                   class="img-fluid"
                 />
               </a>
             </div>
+              <p>{{ item.description }}</p>
             <div>
               <div class="ezy__epcart2_7rEL0J2C-heading mb-3">
-                <a href="#!">
-                  ABUK Home Appliance Surge Protector Voltage Brownout Plug Outlet Power Strip Surge Protector With
-                  Pass Button
+                <a href="{{ item.url }}">
+                  {{ item.name }}
                 </a>
               </div>
               <div>
-                <h3 class="ezy__epcart2_7rEL0J2C-price mb-0">Rs. 158</h3>
+                <h3 class="ezy__epcart2_7rEL0J2C-price mb-0">Rs. {{ item.price }}</h3>
                 <div class="input-group ezy__epcart2_7rEL0J2C-qty mt-3">
                   <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">-</button>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder=""
-                    value="2"
-                    aria-label="Example text with button addon"
-                    aria-describedby="button-addon1"
+                    value="{{ item.quantity }}"
+                    aria-label="Item quantity"
                   />
                   <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">+</button>
                 </div>
@@ -49,161 +48,42 @@
             </div>
           </div>
           <hr class="ezy__epcart2_7rEL0J2C-hr my-0" />
-          <div class="card-body d-flex align-items-start p-md-4">
-            <div class="ezy__epcart2_7rEL0J2C-image me-3 me-md-4">
-              <a href="#!">
-                <img
-                  src="https://cdn.easyfrontend.com/pictures/portfolio/portfolio20.jpg"
-                  alt=""
-                  class="img-fluid"
-                />
-              </a>
-            </div>
-            <div>
-              <div class="ezy__epcart2_7rEL0J2C-heading mb-3">
-                <a href="#!">
-                  Forsining 3d Logo Design Hollow Engraving Black Gold Case Leather Skeleton Mechanical Watches Men
-                  Luxury Brand Heren Horloge
-                </a>
-              </div>
-              <div>
-                <h3 class="ezy__epcart2_7rEL0J2C-price mb-0">Rs. 7,390</h3>
-
-                <div class="input-group ezy__epcart2_7rEL0J2C-qty mt-3">
-                  <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">-</button>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder=""
-                    value="2"
-                    aria-label="Example text with button addon"
-                    aria-describedby="button-addon1"
-                  />
-                  <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">+</button>
-                </div>
-              </div>
-            </div>
-            <div>
-              <button class="btn ezy__epcart2_7rEL0J2C-del d-inline-flex align-items-center rounded-circle">
-                <i class="fas fa-trash-alt fs-6"></i>
-              </button>
-            </div>
-          </div>
-          <hr class="ezy__epcart2_7rEL0J2C-hr my-0" />
-          <div class="card-body d-flex align-items-start p-md-4">
-            <div class="ezy__epcart2_7rEL0J2C-image me-3 me-md-4">
-              <a href="#!">
-                <img
-                  src="https://cdn.easyfrontend.com/pictures/portfolio/portfolio19.jpg"
-                  alt=""
-                  class="img-fluid"
-                />
-              </a>
-            </div>
-            <div>
-              <div class="ezy__epcart2_7rEL0J2C-heading mb-3">
-                <a href="#!">
-                  Factory Brand Wholesale 5# Zinc Accessories Custom Hook Slider Metal #5 For Clothing garment
-                  jacket
-                </a>
-              </div>
-              <div>
-                <h3 class="ezy__epcart2_7rEL0J2C-price mb-0">Rs. 21,452</h3>
-
-                <div class="input-group ezy__epcart2_7rEL0J2C-qty mt-3">
-                  <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">-</button>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder=""
-                    value="2"
-                    aria-label="Example text with button addon"
-                    aria-describedby="button-addon1"
-                  />
-                  <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">+</button>
-                </div>
-              </div>
-            </div>
-            <div>
-              <button class="btn ezy__epcart2_7rEL0J2C-del d-inline-flex align-items-center rounded-circle">
-                <i class="fas fa-trash-alt fs-6"></i>
-              </button>
-            </div>
-          </div>
-          <hr class="ezy__epcart2_7rEL0J2C-hr my-0" />
-          <div class="card-body d-flex align-items-start p-md-4">
-            <div class="ezy__epcart2_7rEL0J2C-image me-3 me-md-4">
-              <a href="#!">
-                <img
-                  src="https://cdn.easyfrontend.com/pictures/portfolio/portfolio15.jpg"
-                  alt=""
-                  class="img-fluid"
-                />
-              </a>
-            </div>
-            <div>
-              <div class="ezy__epcart2_7rEL0J2C-heading mb-3">
-                <a href="#!">
-                  Factory Direct Sales Stainless Steel Heat Resistant Custom Compression Spring Manufacturer Spring
-                  Steel
-                </a>
-              </div>
-              <div>
-                <h3 class="ezy__epcart2_7rEL0J2C-price mb-0">Rs. 17,652</h3>
-
-                <div class="input-group ezy__epcart2_7rEL0J2C-qty mt-3">
-                  <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">-</button>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder=""
-                    value="2"
-                    aria-label="Example text with button addon"
-                    aria-describedby="button-addon1"
-                  />
-                  <button class="btn px-3 py-1 d-inline-flex justify-content-center" type="button">+</button>
-                </div>
-              </div>
-            </div>
-            <div>
-              <button class="btn ezy__epcart2_7rEL0J2C-del d-inline-flex align-items-center rounded-circle">
-                <i class="fas fa-trash-alt fs-6"></i>
-              </button>
-            </div>
-          </div>
+          {% empty %}
+          <p>Your cart is empty.</p>
+          {% endfor %}
         </div>
       </div>
+
       <div class="col-lg-4">
         <div class="card ezy__epcart2_7rEL0J2C-card sticky-top">
           <div class="card-body p-md-4">
             <h6 class="mb-4 opacity-75">Order Summary</h6>
-
             <div class="d-flex justify-content-between align-items-center">
               <span>Sub total</span>
-              <span class="fw-bold">$4,898</span>
+              <span class="fw-bold">Rs. {{ cart_subtotal }}</span>
             </div>
             <hr class="ezy__epcart2_7rEL0J2C-hr" />
             <div class="d-flex justify-content-between align-items-center">
               <span>Shipping Fee</span>
-              <span class="fw-bold">$99</span>
+              <span class="fw-bold">Rs. {{ shipping_fee }}</span>
             </div>
             <hr class="ezy__epcart2_7rEL0J2C-hr" />
             <div class="d-flex justify-content-between align-items-center">
               <span>Tax</span>
-              <span class="fw-bold">$231</span>
+              <span class="fw-bold">Rs. {{ tax }}</span>
             </div>
             <hr class="ezy__epcart2_7rEL0J2C-hr" />
             <div class="d-flex justify-content-between align-items-center">
               <span class="fs-5 fw-bold">Total</span>
-              <span class="fw-bold">$5,641</span>
+              <span class="fw-bold">Rs. {{ cart_total }}</span>
             </div>
           </div>
           <div class="card-body px-md-4 pb-md-4">
-            <button class="btn ezy__epcart2_7rEL0J2C-btn w-100">BUY (0)</button>
+            <a class="btn ezy__epcart2_7rEL0J2C-btn w-100" href="{% url 'order_success' %}">BUY ({{ total_items }})</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-{% endblock%}
+{% endblock %}
