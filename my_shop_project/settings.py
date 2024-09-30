@@ -11,15 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os.path
 from pathlib import Path
-import os
 
 import dj_database_url
 from django.contrib import staticfiles
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,12 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.getenv('SECRET_KEY')
-DB_HOST = os.getenv('DB_HOST')
-DB_DATABASE = os.getenv('DB_DATABASE')
-DB_USER = os.getenv('DB_USER')
-DB_PORT = os.getenv('DB_PORT')
-DB_PASSWORD = os.getenv('DB_PASSWORD')
+SECRET_KEY = 'django-insecure-z%r_-erj&1kz=jh)gs#$wt$$otrt*-st#=n#og)s6$z8!)_#$o'
+DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_DATABASE = os.getenv('DB_DATABASE', 'my_database')
+DB_USER = os.getenv('DB_USER', 'my_user')
+DB_PORT = os.getenv('DB_PORT', '5432')
+DB_PASSWORD = os.getenv('DB_PASSWORD', 'my_password')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('DEBUG') == 'True' else False
 ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
@@ -93,8 +91,9 @@ WSGI_APPLICATION = 'my_shop_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DATABASES = {}
+import dj_database_url
+
 if DEBUG:
-    # True Local
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -108,6 +107,8 @@ else:
         'HOST': DB_HOST,
         'PORT': DB_PORT,
     }
+
+
 
 
 # Password validation
@@ -149,7 +150,6 @@ LOGOUT_REDIRECT_URL = '/'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
