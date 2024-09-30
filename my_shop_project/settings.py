@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'django-insecure-z%r_-erj&1kz=jh)gs#$wt$$otrt*-st#=n#og)s6$z8!)_#$o'
+SECRET_KEY = os.getenv('SECRET_KEY')
 DB_HOST = os.getenv('DB_HOST')
 DB_DATABASE = os.getenv('DB_DATABASE')
 DB_USER = os.getenv('DB_USER')
@@ -32,8 +32,8 @@ DB_PORT = os.getenv('DB_PORT')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('DEBUG') == 'True' else False
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
 
-ALLOWED_HOSTS = ['my-shop-style-241f9c05ce12.herokuapp.com']
 
 
 # Application definition
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'my_shop_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DATABASES = {}
 if DEBUG:
-    # False Local
+    # True Local
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
